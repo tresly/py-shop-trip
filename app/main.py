@@ -64,7 +64,7 @@ def shop_trip() -> None:
                 cheapest_shop["product_cost"] = round(product_cost, 1)
 
         if human.money >= cheapest_shop["price"]:
-            print(f"{human.name} rides to {cheapest_shop["name"]}")
+            print(f"{human.name} rides to {cheapest_shop['name']}")
             print()
 
             date = datetime.datetime.now()
