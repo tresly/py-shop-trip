@@ -79,7 +79,8 @@ def shop_trip() -> None:
                 price = 0.0
 
                 if product_name in cheapest_shop["products"]:
-                    price += float(quantity * cheapest_shop["products"][product_name])
+                    price_in_shop = cheapest_shop["products"][product_name]
+                    price += float(quantity * price_in_shop)
 
                 if price.is_integer():
                     price = int(price)
