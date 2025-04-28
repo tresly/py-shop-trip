@@ -76,7 +76,8 @@ def shop_trip() -> None:
             print("You have bought:")
 
             for product_name, quantity in human.product_cart.items():
-                price = quantity * cheapest_shop["products"][product_name]
+                if product_name in cheapest_shop["products"]:
+                    price = quantity * cheapest_shop["products"][product_name]
 
                 if price.is_integer():
                     price = int(price)
@@ -86,13 +87,13 @@ def shop_trip() -> None:
                 print(f"{quantity} {product_name}s for "
                       f"{price} dollars")
 
-            print(f"Total cost is {cheapest_shop["product_cost"]} dollars")
+            print(f"Total cost is {cheapest_shop['product_cost']} dollars")
             print("See you again!")
             print()
 
             print(f"{human.name} rides home")
             print(f"{human.name} now has"
-                  f" {human.money - cheapest_shop["price"]} dollars")
+                  f" {human.money - cheapest_shop['price']} dollars")
             print()
 
         else:
