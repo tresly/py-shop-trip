@@ -76,8 +76,10 @@ def shop_trip() -> None:
             print("You have bought:")
 
             for product_name, quantity in human.product_cart.items():
+                price = 0.0
+
                 if product_name in cheapest_shop["products"]:
-                    price = quantity * cheapest_shop["products"][product_name]
+                    price += float(quantity * cheapest_shop["products"][product_name])
 
                 if price.is_integer():
                     price = int(price)
